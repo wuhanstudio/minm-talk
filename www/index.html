@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>MinM Attack</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="dist/reveal.css">
+        <link rel="stylesheet" href="dist/theme/white.css" id="theme">
+        <link rel="stylesheet" href="plugin/highlight/monokai.css">
+        
+        <link rel="stylesheet" href="style.css">
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="plugin/chalkboard/style.css">
+        <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section data-auto-animate>
+                    <span class="menu-title" style="display: none">Overview</span>
+                    <h3 class="r-fit-text">Man-in-the-Middle Attack against Object Detection</h3>
+                    <p class="name fragment" data-fragment-index="1" style="color: blue;font-size: 26px;"> Is it possible to attack an object detection system?</p>
+                    <div class="r-vstack">
+                        <img class="fragment" src="images/overview.png">
+                    </div>
+                    <div>
+                        <!-- <img src="images/wuhanstudio.jpg" class="wuhanstudio"> -->
+                        <p class="name">Han Wu &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/wuhanstudio/">@wuhanstudio</a></p>
+                        <p class="name">2nd-year Ph.D. Student at the University of Exeter</p>
+                    </div>
+                    
+                    <aside class="notes">
+                        Hi, I'm a PhD student at the University of Exeter, in the U.K. Here's my github username. I would like to introduce adversarial attacks against deep learning models. So we would like to seek the answer for the question: Is Deep Learning secure for Robots? First, I'll give a brief introduction to adversarial attacks. Laster after that ...
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Background</h2>
+                    <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Why do we attack the object detection system?</p>
+                     <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <p class="" style="font-size: 35px;">Deep Learning: From Data Center to Edge Devices</p>
+                    <img src="images/data_center_edger.png" style="width: 65%; margin-bottom: 0;" alt="">
+                    <!-- <span class="fragment r-fit-text">Intelligent robots possess a more comprehensive perception of environments.</span> -->
+                    <div class="fragment r-vstack">
+                        <p style="font-size: 24px; margin-top: 0; margin-bottom: 0;">Deep learning models are vulnerable to adversarial attacks.</p>
+                        <img src="images/daedalus.png" style="width: 65%;" alt="">
+                    </div>
+                    <p class="fragment" style="font-size: 28px; margin-top: 0; margin-bottom: 0;">The attack is possible in theory, but is it possible in practice?</p>
+                    <p style="font-size: 12px;">Wang, Derui, et al. "Daedalus: Breaking nonmaximum suppression in object detection via adversarial examples." IEEE Transactions on Cybernetics (2021).</p>
+                    <aside class="notes">
+                        But here's the problem ...
+                    </aside>
+                </section>
+
+                <section>
+                    <p class="" style="font-size: 35px;">Is the attack possible in practice?</p>
+                    <div class="r-stack">
+                        <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/detection.png" >
+                        <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/digital.png" >
+                        <img class="fragment" data-fragment-index="3" src="images/physical.png" >
+                      </div>
+                    <!-- <p class="r-fit-text">Deep neural networks are vulnerable to adversarial attacks in various tasks.</p> -->
+                    <!-- <p class="" style="font-size: 28px;">Adversarial attacks against image classification</p> -->
+                        <!-- <p class="fragment r-fit-text">Instead of minimizing the loss function, the adversarial attack maximizes it.</p> -->
+                    <div class="fragment r-vstack" data-fragment-index="4">
+                        <img src="images/prior.png" alt="">
+                    </div>
+                    <span class="fragment" data-fragment-index="5" style="font-size: 22px;">Digital Perturbations are flexible, but infeasible.</span>
+                    <span class="fragment" data-fragment-index="7" style="font-size: 22px; color:blue">Can we make digital perturbations feasible?</span>
+                    <p class="fragment" data-fragment-index="6" style="font-size: 22px;">Research interests are shifting from digital attacks to physical attacks.</p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+        
+                <section>
+                    <!-- <p class="r-fit-text">Deep neural networks are vulnerable to adversarial attacks in various tasks.</p> -->
+                    <img src="images/prior.png" alt="" />
+                    <!-- <p class="" style="font-size: 28px;">Adversarial attacks against image classification</p> -->
+                        <!-- <p class="fragment r-fit-text">Instead of minimizing the loss function, the adversarial attack maximizes it.</p> -->
+                    <div class="fragment r-vstack">
+                        <img src="images/after.png" alt="">
+                    </div>
+                    <span class="" style="font-size: 28px;">Man-in-the-Middle Attack against Object Detection</span>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Short Demo</h2>
+                    <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Man-in-the-middle Attack</p>
+                     <aside class="notes">
+                    </aside>
+                </section>
+
+                <section data-background-video="images/step1.mp4" 
+                data-background-video data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section data-background-video="images/step1_1.mp4" 
+                data-background-video data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section data-background-video="images/step2.mp4" 
+                data-background-video data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 style="font-size: 35px;">Step 1: Deploy the hardware</h2>
+                    <div class="fragment r-vstack">
+                        <img src="images/apollo.png" width="55%" alt="">
+                        <img src="images/hardware.png" width="55%" alt="">
+                    </div>
+                    <p class="name">Baidu Apollo: &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/ApolloAuto/apollo">An open autonomous driving platform.</a></p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 style="font-size: 35px;">Step 1: Deploy the hardware</h2>
+                    <img src="images/step1s.png" class="" />
+                    <img src="images/invertible.png" class="fragment fade-in" />
+                    <p class="name">Open Source: &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/wuhanstudio/adversarial-camera">Adversarial Camera</a></p>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 class="r-fit-text">Step 2: The WHite-box Adversarial Toolbox (WHAT)</h2>
+                    <p style="font-size: 24px;">We focus on real-time white-box attacks against object detection (SSD / YOLO / FasterRCNN).</p>
+                    <img src="images/y.jpg">
+                    <p style="font-size: 20px;">
+                        $$J(x, \delta, y_h) = -\sum{\sigma(c) * \sigma(p_i)}$$
+                    </p>
+                    <div class="r-hstack">
+                        <div class="r-vstack">
+                            <img src="images/no_attack.gif">
+                            <p class="" style="margin-top: 0; font-size: 20px;">No attack</p>
+                        </div>
+                        <div class="r-vstack">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="r-vstack">
+                            <img src="images/attack.gif">
+                            <p class="" style="margin-top: 0; font-size: 20px;">Under attack</p>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 class="r-fit-text">Is Deep Learning secure for Robots?</h2>
+                    <p class="name fragment" data-fragment-index="1" style="color: blue;font-size: 26px;">Bridge the GAP between publications and applications.</p>
+                </section>
+
+                <section>
+                    <h2>Thanks</h2>
+                    <div class="r-vstack">
+                        <p><a href="https://minm.wuhanstudio.uk/">https://minm.wuhanstudio.uk</a></p>
+                    </div>
+                    <img src="images/qrcode.png" width="25%" />
+                </section>
+
+            </div>
+        </div>
+
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/chalkboard/plugin.js"></script>
+        <script src="plugin/customcontrols/plugin.js"></script>
+        <script src="plugin/menu/menu.js"></script>
+        <script src="plugin/math/math.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+
+        <script>
+            Reveal.initialize({
+                center: true,
+                hash: true,
+                plugins: [ RevealHighlight, RevealMath, RevealMenu, RevealChalkboard, RevealCustomControls ],
+                mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                // pass other options into `MathJax.Hub.Config()`
+                TeX: { Macros: { RR: "{\\bf R}" } },
+                menu: {
+                    hideMissingTitles: true,
+                },
+                chalkboard: {
+                    boardmarkerWidth: 3,
+                    chalkWidth: 7,
+                    chalkEffect: 1.0,
+                    storage: null,
+                    src: null,
+                    readOnly: undefined,
+                    transition: 800,
+                    theme: "chalkboard",
+                    background: [ 'rgba(127,127,127,.1)' , path + 'img/blackboard.png' ],
+                    grid: { color: 'rgb(50,50,10,0.5)', distance: 80, width: 2},
+                    eraser: { src: path + 'img/sponge.png', radius: 20},
+                    boardmarkers : [
+                            { color: 'rgba(100,100,100,1)', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'},
+                            { color: 'rgba(30,144,255, 1)', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'},
+                            { color: 'rgba(220,20,60,1)', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'},
+                            { color: 'rgba(50,205,50,1)', cursor: 'url(' + path + 'img/boardmarker-green.png), auto'},
+                            { color: 'rgba(255,140,0,1)', cursor: 'url(' + path + 'img/boardmarker-orange.png), auto'},
+                            { color: 'rgba(150,0,20150,1)', cursor: 'url(' + path + 'img/boardmarker-purple.png), auto'},
+                            { color: 'rgba(255,220,0,1)', cursor: 'url(' + path + 'img/boardmarker-yellow.png), auto'}
+                    ],
+                    chalks: [
+                            { color: 'rgba(255,255,255,0.5)', cursor: 'url(' + path + 'img/chalk-white.png), auto'},
+                            { color: 'rgba(96, 154, 244, 0.5)', cursor: 'url(' + path + 'img/chalk-blue.png), auto'},
+                            { color: 'rgba(237, 20, 28, 0.5)', cursor: 'url(' + path + 'img/chalk-red.png), auto'},
+                            { color: 'rgba(20, 237, 28, 0.5)', cursor: 'url(' + path + 'img/chalk-green.png), auto'},
+                            { color: 'rgba(220, 133, 41, 0.5)', cursor: 'url(' + path + 'img/chalk-orange.png), auto'},
+                            { color: 'rgba(220,0,220,0.5)', cursor: 'url(' + path + 'img/chalk-purple.png), auto'},
+                            { color: 'rgba(255,220,0,0.5)', cursor: 'url(' + path + 'img/chalk-yellow.png), auto'}
+                    ]
+                },
+                customcontrols: {
+                    controls: [
+                        { icon: '<i class="fa fa-pen-square"></i>',
+                        title: 'Toggle chalkboard (B)',
+                        action: 'RevealChalkboard.toggleChalkboard();'
+                        },
+                        { icon: '<i class="fa fa-pen"></i>',
+                        title: 'Toggle notes canvas (C)',
+                        action: 'RevealChalkboard.toggleNotesCanvas();'
+                        }
+                    ]
+                },
+                // showNotes: true,
+            });
+        </script>
+    </body>
+</html>
