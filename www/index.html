@@ -177,10 +177,10 @@
                 <section>
                     <h2 class="r-fit-text">Step 2: The WHite-box Adversarial Toolbox (WHAT)</h2>
                     <p style="font-size: 24px; text-align: left;">
-                        For each iteration, we update $x'_t$ based on our desired output $O^*=(b^*, c^*, p^*)$:
+                        For each iteration, we update $\delta'_t = x' - x$ based on our desired output $O^*=(b^*, c^*, p^*)$:
                     </p>
                     <p style="font-size: 24px;" class="fragment">
-                        $$ x'_t = proj_p(x'_{t-1} + \alpha sign(\frac{\partial L^*(x'_{t-1};O^*)}{\partial x'_{t-1}} )) $$
+                        $$ \delta'_t = proj_p(\delta'_{t-1} + \alpha sign(\frac{\partial L^*(x'_{t-1};O^*)}{\partial x'_{t-1}} )) $$
                     </p>
                     <p style="font-size: 24px; text-align: left;" class="fragment">
                         How do we desgin the loss function?
