@@ -44,7 +44,7 @@
                     </div>
                     
                     <aside class="notes">
-                        Hi, I'm a PhD student at the University of Exeter, in the U.K. Here's my github username. I would like to introduce adversarial attacks against deep learning models. So we would like to seek the answer for the question: Is Deep Learning secure for Robots? First, I'll give a brief introduction to adversarial attacks. Laster after that ...
+                        Hi, I'm a 2nd-year Ph.D. Student. I would like to introduce man-in-the-middle attack against object detection system. Well, is it possible to attack an object detection system? Say for example, here' we have .... But why do I do this?
                     </aside>
                 </section>
 
@@ -52,6 +52,7 @@
                     <h2>Background</h2>
                     <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Why do we attack the object detection system?</p>
                      <aside class="notes">
+                        Why do we attack the object detection system?
                     </aside>
                 </section>
 
@@ -66,7 +67,7 @@
                     <p class="fragment" style="font-size: 28px; margin-top: 0; margin-bottom: 0;">The attack is possible in theory, but is it possible in practice?</p>
                     <p style="font-size: 12px;">Wang, Derui, et al. "Daedalus: Breaking nonmaximum suppression in object detection via adversarial examples." IEEE Transactions on Cybernetics (2021).</p>
                     <aside class="notes">
-                        But here's the problem ...
+                        Because Deep learning models are moving from data centres to edge devices.We have more and more deep learning models deployed on edge devices, such as automous driving car. We know that deep learning models require large amounts of computational resources and energy. Twenty years ago, they are only available in data centres. Data cenres are usually highly secure in a dedicated space within a building, but edge devices are not, they are exposed to the outside world directly. Now, we have more computational resources on edge devices. Is it secure to deploy deep learning models on edge devices? Unfortunately, it is not. Deep learning models are vulnerable to adversarial attacks. This is not a secret. It has been over 8 years since the first adversarial attack against deep learning models.
                     </aside>
                 </section>
 
@@ -83,9 +84,8 @@
                     <div class="fragment r-vstack" data-fragment-index="4">
                         <img src="images/prior.png" alt="">
                     </div>
-                    <span class="fragment" data-fragment-index="5" style="font-size: 22px;">Digital Perturbations are flexible, but infeasible.</span>
-                    <span class="fragment" data-fragment-index="7" style="font-size: 22px; color:blue">Can we make digital perturbations feasible?</span>
                     <p class="fragment" data-fragment-index="6" style="font-size: 22px;">Research interests are shifting from digital attacks to physical attacks.</p>
+                    <span class="fragment" data-fragment-index="7" style="font-size: 22px; color:blue">Can we make digital perturbations feasible?</span>
                     <aside class="notes">
                     </aside>
                 </section>
@@ -128,7 +128,7 @@
                     </aside>
                 </section>
 
-                <section>
+                <!-- <section>
                     <h2 style="font-size: 35px;">Step 1: Deploy the hardware</h2>
                     <div class="fragment r-vstack">
                         <img src="images/apollo.png" width="55%" alt="">
@@ -137,7 +137,7 @@
                     <p class="name">Baidu Apollo: &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/ApolloAuto/apollo">An open autonomous driving platform.</a></p>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
                 <section>
                     <h2 style="font-size: 35px;">Step 1: Deploy the hardware</h2>
@@ -150,11 +150,52 @@
 
                 <section>
                     <h2 class="r-fit-text">Step 2: The WHite-box Adversarial Toolbox (WHAT)</h2>
-                    <p style="font-size: 24px;">We focus on real-time white-box attacks against object detection (SSD / YOLO / FasterRCNN).</p>
-                    <img src="images/y.jpg">
-                    <p style="font-size: 20px;">
-                        $$J(x, \delta, y_h) = -\sum{\sigma(c) * \sigma(p_i)}$$
+                    <p style="font-size: 22px; text-align: left;" class="fragment">For each input image $x$, the detection model outputs $S$ bounding boxes $\{\hat{o}_1, \hat{o}_2, ..., \hat{o}_S\}$.</p>
+                    <div class="fragment">
+                        <p style="font-size: 22px; text-align: left;">Each output $\hat{o}_i=(\hat{b}_i, \hat{c}_i, \hat{p}_i)$ contains a bounding box $\hat{b}_i=(\hat{b}_i^x, \hat{b}_i^y, \hat{b}_i^w, \hat{b}_i^h)$.</p>
+                        <img src="images/y.jpg" style="margin-top: 0; margin-bottom: 0;">
+                    </div>
+                    <p style="font-size: 22px; margin-top: 0; text-align: left;" class="fragment">A confidence value $\hat{c}_i \in [0, 1]$, and a probability vevtor $\hat{p}_i=(\hat{p}_i^1, \hat{p}_i^2, ..., \hat{p}_i^K)$ for $K$ classes.</p>
+                    <p style="font-size: 22px; text-align: left; margin-bottom: 0;" class="fragment">
+                        We would like to generate an adversarial example $x'$: $$min||x'-x||_p \quad s.t. \hat{O}(x') \neq \hat{O}(x)$$
                     </p>
+                    <div class="r-hstack">
+                        <div class="r-vstack">
+                            <img src="images/no_attack.gif">
+                            <p class="" style="margin-top: 0; font-size: 20px;">No attack</p>
+                        </div>
+                        <div class="r-vstack">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div class="r-vstack">
+                            <img src="images/attack.gif">
+                            <p class="" style="margin-top: 0; font-size: 20px;">Under attack</p>
+                        </div>
+                    </div>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section>
+                    <h2 class="r-fit-text">Step 2: The WHite-box Adversarial Toolbox (WHAT)</h2>
+                    <p style="font-size: 24px; text-align: left;">
+                        For each iteration, we update $x'_t$ based on our desired output $O^*=(b^*, c^*, p^*)$:
+                    </p>
+                    <p style="font-size: 24px;" class="fragment">
+                        $$ x'_t = proj_p(x'_{t-1} + \alpha sign(\frac{\partial L^*(x'_{t-1};O^*)}{\partial x'_{t-1}} )) $$
+                    </p>
+                    <p style="font-size: 24px; text-align: left;" class="fragment">
+                        How do we desgin the loss function?
+                    </p>
+                    <p style="font-size: 24px;" class="fragment">
+                        Training Loss: $L^*(x', O^*) = L_{obj}^*(x', O^*) + L_{bbox}^*(x', O^*) + L_{class}^*(x', O^*)$
+                    </p>
+                    <div class="fragment">
+                        <p style="font-size: 24px;">
+                            Conjuring Loss: $L^*(x', O^*) = \sum{\sigma(c) * \sigma(p_i)}$
+                        </p>
+                        <p style="font-size: 24px;">
+                            Vanishing Loss: $L^*(x', O^*) = -\sum{\sigma(c) * \sigma(p_i)}$
+                        </p>
+                    </div>
                     <div class="r-hstack">
                         <div class="r-vstack">
                             <img src="images/no_attack.gif">
