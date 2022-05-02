@@ -1,0 +1,73 @@
+<<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <script src="https://unpkg.com/scrollreveal"></script>
+     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+     <style type="text/css">
+          hr {
+              margin-top: 3rem;
+              margin-bottom: 1rem;
+              border: 0;
+              border-top: 1px solid rgba(0, 0, 0, 0.1);
+          }
+     </style>
+     <title></title>
+</head>
+<body>
+     <div class="container text-center">
+          <div class="row">
+               <h2 class="r-fit-text mt-3 mb-3">Step 1: Generating the perturbation</h2>
+          </div>
+          <div class="mt-3">          
+              <p style="font-size: 22px; text-align: left;" class="fragment mt-3">For each input image $x$, the detection model outputs $S$ bounding boxes $\{\hat{o}_1, \hat{o}_2, ..., \hat{o}_S\}$.</p>
+              <p style="font-size: 22px; text-align: left;">Each output $\hat{o}_i=(\hat{b}_i, \hat{c}_i, \hat{p}_i)$   contains a bounding box $\hat{b}_i=(\hat{b}_i^x, \hat{b}_i^y, \hat{b}_i^w, \hat{b}_i^h)$.</p>
+              <img src="images/y.jpg" style="margin-top: 0; margin-bottom: 0;">
+               <p style="font-size: 22px; margin-top: 0; text-align: left;" class="">A confidence value $\hat{c}_i \in [0, 1]$, and a probability vevtor $\hat{p}_i=(\hat{p}_i^1, \hat{p}_i^2, ..., \hat{p}_i^K)$ for $K$ classes.</p>
+               <p style="font-size: 22px; text-align: left; margin-bottom: 0;" class="">
+                   We would like to generate an adversarial example $x'$: $$min||x'-x||_p \quad s.t. \hat{O}(x') \neq \hat{O}(x)$$
+               </p>
+               <p style="font-size: 24px; text-align: left;">
+                   For each iteration, we update $\delta'_t = x' - x$ based on our desired output $O^*=(b^*, c^*, p^*)$:
+               </p>
+               <p style="font-size: 24px;" class="">
+                   $$ \delta'_t = proj_p(\delta'_{t-1} + \alpha sign(\frac{\partial L^*(x'_{t-1};O^*)}{\partial x'_{t-1}} )) $$
+               </p>
+               <p style="font-size: 24px; text-align: left;" class="">
+                   How do we desgin the loss function?
+               </p>
+               <p style="font-size: 24px;" class="">
+                   Training Loss: $L^*(x', O^*) = L_{obj}^*(x', O^*) + L_{bbox}^*(x', O^*) + L_{class}^*(x', O^*)$
+               </p>
+               <p style="font-size: 24px;">
+                  Conjuring Loss: $L^*(x', O^*) = \sum{\sigma(c) * \sigma(p_i)}$
+               </p>
+               <p style="font-size: 24px;">
+                  Vanishing Loss: $L^*(x', O^*) = -\sum{\sigma(c) * \sigma(p_i)}$
+               </p>
+          </div>
+
+          <hr/>
+
+          <div class="row">
+               <h2 class="mt-3 mb-3">Step 2: Applying the perturbation</h2>
+               <img class="mt-3 mb-3 headline" src="images/step1s.png">
+               <h3 class="text-center mt-3 mb-3">Invertible resize function</h3>
+               <img class="mt-3 mb-3 headline" src="images/invertible.png">
+          </div>
+     </div>
+     <script type="text/javascript">ScrollReveal().reveal('.headline',  { delay: 1000 })</script>
+     <script>
+          MathJax = {
+            tex: {
+              inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+              fontCache: 'global'
+            }
+          };
+     </script>
+</body>
+</html>
