@@ -31,100 +31,123 @@
             <div class="slides">
 
                 <section data-auto-animate>
-                    <section>
-                        <span class="menu-title" style="display: none">Overview</span>
-                        <h3 class="r-fit-text">Man-in-the-Middle Attack against Object Detection</h3>
-                        <p class="name fragment" data-fragment-index="1" style="color: blue;font-size: 26px;"> Is it possible to attack an object detection system?</p>
-                        <div class="r-vstack">
-                            <img class="fragment" src="images/overview.png">
-                        </div>
-                        <div>
-                            <!-- <img src="images/wuhanstudio.jpg" class="wuhanstudio"> -->
-                            <p class="name">Han Wu &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/wuhanstudio/">@wuhanstudio</a></p>
-                            <p class="name">2nd-year Ph.D. Student at the University of Exeter</p>
-                        </div>
-                        
-                        <aside class="notes">
-                            Hi, I'm a 2nd-year Ph.D. Student. I would like to introduce man-in-the-middle attack against object detection system. Well, is it possible to attack an object detection system? Say for example, here' we have .... But why do I do this?
-                        </aside>
-                    </section>
-
-                    <section data-background-iframe="short.html" data-background-interactive></section>
-
-                    <section>
-                        <h2>Short Demo</h2>
-                        <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Man-in-the-middle Attack</p>
-                         <aside class="notes">
-                        </aside>
-                    </section>
-
-                    <section data-background-video="images/demo.mp4" 
-                    data-background-video data-background-video-muted>
-                        <aside class="notes">
-                        </aside>
-                    </section>
-
-                    <section data-background-iframe="steps.html" data-background-interactive></section>
-
-                    <section>
-                        <h3>Future Work</h3>
-                        <p class="" style="color: blue; font-size: 20px;"> Moving the attack from the model to the sensor</p>
-                        <img src="images/arch.jpg">
-                        <ul>
-                            <li class=""  style="font-size: 20px;"> [SoC] Allwinner RISC-V D1s</li>
-                            <li class="fragment"  style="font-size: 20px;"> [Tasks] Can we attack speech recognition systems?</li>
-                            <li class="fragment" style="font-size: 20px;"> [Defence] How can we defence against the attack?</li>
-                            <li class="fragment" style="font-size: 20px;"> [Detect] How do you know if your sensor is under attack?</li>
-                            <li class="fragment" style="font-size: 20px;"> ...... </li>
-                        </ul>
-
-                         <aside class="notes">
-                        </aside>
-                    </section>
-
-                    <section>
-                        <h2>Thanks</h2>
-                        <div class="r-vstack">
-                            <p><a href="https://minm.wuhanstudio.uk/">https://minm.wuhanstudio.uk</a></p>
-                        </div>
-                        <img src="images/qrcode.png" width="25%" />
-                    </section>
-
+                    <span class="menu-title" style="display: none">Overview</span>
+                    <h3 class="r-fit-text">Man-in-the-Middle Attack against Object Detection</h3>
+                    <p class="name">Han Wu, Sareh Rowlands, and Johan Wahlstrom</p>
+                    <div class="r-vstack">
+                        <img class="" src="images/overview.png">
+                    </div>
+                    <div>
+                        <!-- <img src="images/wuhanstudio.jpg" class="wuhanstudio"> -->
+                        <!-- <p class="name">Han Wu,  &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/wuhanstudio/">@wuhanstudio</a></p> -->
+                        <p class="name" data-fragment-index="1" style="color: blue;font-size: 28px;"> Is Deep Learning secure for Robots?</p>
+                    </div>
+                    
+                    <aside class="notes">
+                        Hi, I'm a 2nd-year Ph.D. Student. I would like to introduce man-in-the-middle attack against object detection system. Well, is it possible to attack an object detection system? Say for example, here' we have .... But why do I do this?
+                    </aside>
                 </section>
 
-                <section>
+                <!-- <section>
                     <h2>Background</h2>
                     <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Why do we attack the object detection system?</p>
                      <aside class="notes">
                         Why do we attack the object detection system?
                     </aside>
+                </section> -->
+
+                <section data-background-video="images/demo.mp4" data-background-video data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+                <section data-background-video="images/attack.mp4" data-background-video data-background-video-muted>
+                    <aside class="notes">
+                    </aside>
                 </section>
 
                 <section>
-                    <p class="" style="font-size: 35px;">Deep Learning: From Data Center to Edge Devices</p>
-                    <img src="images/data_center_edger.png" style="width: 65%; margin-bottom: 0;" alt="">
+                    <!-- <p class="" style="font-size: 35px;">Deep Learning: From Data Center to Edge Devices</p> -->
+                    <!-- <img src="images/data_center_edger.png" style="width: 65%; margin-bottom: 0;" alt=""> -->
                     <!-- <span class="fragment r-fit-text">Intelligent robots possess a more comprehensive perception of environments.</span> -->
-                    <div class="fragment r-vstack">
-                        <p style="font-size: 24px; margin-top: 0; margin-bottom: 0;">Deep learning models are vulnerable to adversarial attacks.</p>
-                        <img src="images/daedalus.png" style="width: 65%;" alt="">
+                    <div class="r-vstack">
+                        <p style="font-size:0.8em">Deep learning models are vulnerable to adversarial attacks.</p>
+                        <img src="images/daedalus.png" style="width: 80%;" alt="">
                     </div>
-                    <p class="fragment" style="font-size: 28px; margin-top: 0; margin-bottom: 0;">The attack is possible in theory, but is it possible in practice?</p>
-                    <p style="font-size: 12px;">Wang, Derui, et al. "Daedalus: Breaking nonmaximum suppression in object detection via adversarial examples." IEEE Transactions on Cybernetics (2021).</p>
+                    <p style="font-size:0.6em" class="fragment" data-fragment-index="1">To achieve <strong>real-time</strong> adversarial attacks, we need to solve two problems:</p>
+                    <ul>
+                        <li class="fragment" data-fragment-index="2">
+                            <span style="font-size:0.6em">How to generate the perturbation?</span><span class="fragment" data-fragment-index="4"  style="color:blue; font-size:0.6em"> (The PCB Attack)</span>
+                        </li>
+                        <li class="fragment" data-fragment-index="3">
+                            <span style="font-size:0.6em">How to apply the perturbation?</span><span class="fragment" data-fragment-index="5"  style="color:blue; font-size:0.6em"> (The Man-in-the-Middle Attack)</span>
+                        </li>
+                    </ul>
                     <aside class="notes">
                         Because Deep learning models are moving from data centres to edge devices.We have more and more deep learning models deployed on edge devices, such as automous driving car. We know that deep learning models require large amounts of computational resources and energy. Twenty years ago, they are only available in data centres. Data cenres are usually highly secure in a dedicated space within a building, but edge devices are not, they are exposed to the outside world directly. Now, we have more computational resources on edge devices. Is it secure to deploy deep learning models on edge devices? Unfortunately, it is not. Deep learning models are vulnerable to adversarial attacks. This is not a secret. It has been over 8 years since the first adversarial attack against deep learning models.
                     </aside>
                 </section>
 
                 <section>
+                    <h6 style="margin-top: 30px; margin-bottom: 10px;">Step 1: Generating the perturbation (The PCB Attack)</h6>
+                    <div class="r-hstack">
+                        <p style="font-size: 25px;">Prior Research 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            Our Method</p>
+                    </div>
+                    <div class="r-hstack">
+                        <video  autoplay muted width="35%">
+                            <source src="images/no_decay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                          &nbsp;&nbsp;&nbsp;&nbsp;
+                          <video  autoplay muted width="35%">
+                            <source src="images/with_decay.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                    </div>
+                    <div class="r-hstack">
+                        <p style="font-size: 20px;">No learning rate decay 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            With learning rate decay</p>
+                    </div>
+                    <p style="font-size: 25px; margin-top: 0; margin-bottom: 0;" class="fragment"> Our method generates more bounding boxes, and have less variation.</p>
+                    <img src="images/results.png" class="fragment" width="80%">
+                </section>
+
+                <section>
+                    <!-- <p class="" style="font-size: 35px;">Deep Learning: From Data Center to Edge Devices</p> -->
+                    <!-- <img src="images/data_center_edger.png" style="width: 65%; margin-bottom: 0;" alt=""> -->
+                    <!-- <span class="fragment r-fit-text">Intelligent robots possess a more comprehensive perception of environments.</span> -->
+                    <div class="r-vstack">
+                        <h6>Step 2: Applying the perturbation (The Man-in-the-Middle Attack)</h6>
+                    </div>
+                    <br />
+                    <img src="images/attacks.jpg" width="100%">
+
+                    <aside class="notes">
+                        Because Deep learning models are moving from data centres to edge devices.We have more and more deep learning models deployed on edge devices, such as automous driving car. We know that deep learning models require large amounts of computational resources and energy. Twenty years ago, they are only available in data centres. Data cenres are usually highly secure in a dedicated space within a building, but edge devices are not, they are exposed to the outside world directly. Now, we have more computational resources on edge devices. Is it secure to deploy deep learning models on edge devices? Unfortunately, it is not. Deep learning models are vulnerable to adversarial attacks. This is not a secret. It has been over 8 years since the first adversarial attack against deep learning models.
+                    </aside>
+                </section>
+
+                <!-- <section>
                     <p class="" style="font-size: 35px;">Is the attack possible in practice?</p>
                     <div class="r-stack">
                         <img class="fragment fade-in-then-out" data-fragment-index="1" src="images/detection.png" >
                         <img class="fragment fade-in-then-out" data-fragment-index="2" src="images/digital.png" >
                         <img class="fragment" data-fragment-index="3" src="images/physical.png" >
                       </div>
-                    <!-- <p class="r-fit-text">Deep neural networks are vulnerable to adversarial attacks in various tasks.</p> -->
-                    <!-- <p class="" style="font-size: 28px;">Adversarial attacks against image classification</p> -->
-                        <!-- <p class="fragment r-fit-text">Instead of minimizing the loss function, the adversarial attack maximizes it.</p> -->
+                    <p class="r-fit-text">Deep neural networks are vulnerable to adversarial attacks in various tasks.</p>
+                    <p class="" style="font-size: 28px;">Adversarial attacks against image classification</p>
+                    <p class="fragment r-fit-text">Instead of minimizing the loss function, the adversarial attack maximizes it.</p>
                     <div class="fragment r-vstack" data-fragment-index="4">
                         <img src="images/prior.png" alt="">
                     </div>
@@ -132,45 +155,36 @@
                     <span class="fragment" data-fragment-index="7" style="font-size: 22px; color:blue">Can we make digital perturbations feasible?</span>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
         
-                <section>
-                    <!-- <p class="r-fit-text">Deep neural networks are vulnerable to adversarial attacks in various tasks.</p> -->
+                <!-- <section>
                     <img src="images/prior.png" alt="" />
-                    <!-- <p class="" style="font-size: 28px;">Adversarial attacks against image classification</p> -->
-                        <!-- <p class="fragment r-fit-text">Instead of minimizing the loss function, the adversarial attack maximizes it.</p> -->
                     <div class="fragment r-vstack">
                         <img src="images/after.png" alt="">
                     </div>
                     <span class="" style="font-size: 28px;">Man-in-the-Middle Attack against Object Detection</span>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
-                <section>
+                <!-- <section>
                     <h2>Short Demo</h2>
                     <p class="" data-fragment-index="1" style="color: blue; font-size: 30px;"> Man-in-the-middle Attack</p>
                      <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
-                <section data-background-video="images/step1.mp4" 
+                <!-- <section data-background-video="images/step1_1.mp4" 
                 data-background-video data-background-video-muted>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
-                <section data-background-video="images/step1_1.mp4" 
+                <!-- <section data-background-video="images/step2.mp4" 
                 data-background-video data-background-video-muted>
                     <aside class="notes">
                     </aside>
-                </section>
-
-                <section data-background-video="images/step2.mp4" 
-                data-background-video data-background-video-muted>
-                    <aside class="notes">
-                    </aside>
-                </section>
+                </section> -->
 
                 <!-- <section>
                     <h2 style="font-size: 35px;">Step 1: Deploy the hardware</h2>
@@ -183,16 +197,16 @@
                     </aside>
                 </section> -->
 
-                <section>
+                <!-- <section>
                     <h2 style="font-size: 35px;">Step 1: Deploy the hardware</h2>
                     <img src="images/step1s.png" class="" />
                     <img src="images/invertible.png" class="fragment fade-in" />
                     <p class="name">Open Source: &nbsp;<i class="fab fa-github"></i>&nbsp; <a href="https://github.com/wuhanstudio/adversarial-camera">Adversarial Camera</a></p>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
-                <section>
+                <!-- <section>
                     <h2 class="r-fit-text">Step 2: The WHite-box Adversarial Toolbox (WHAT)</h2>
                     <p style="font-size: 22px; text-align: left;" class="fragment">For each input image $x$, the detection model outputs $S$ bounding boxes $\{\hat{o}_1, \hat{o}_2, ..., \hat{o}_S\}$.</p>
                     <div class="fragment">
@@ -216,9 +230,9 @@
                     </div>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
-                <section>
+                <!-- <section>
                     <h2 class="r-fit-text">Step 2: The WHite-box Adversarial Toolbox (WHAT)</h2>
                     <p style="font-size: 24px; text-align: left;">
                         For each iteration, we update $\delta'_t = x' - x$ based on our desired output $O^*=(b^*, c^*, p^*)$:
@@ -253,11 +267,12 @@
                     </div>
                     <aside class="notes">
                     </aside>
-                </section>
+                </section> -->
 
                 <section>
-                    <h2 class="r-fit-text">Is Deep Learning secure for Robots?</h2>
-                    <p class="name fragment" data-fragment-index="1" style="color: blue;font-size: 26px;">Bridge the GAP between publications and applications.</p>
+                    <p class="r-fit-text">Man-in-the-Middle Attack against Object Detection</p>
+                    <img src="images/demo.jpg" />
+                    <p class="name fragment" style="color: blue;font-size: 26px;">Is Deep Learning secure for Robots?</p>
                 </section>
 
                 <section>
