@@ -1,4 +1,1 @@
-# PGR Conference
-
 ![](intro.png)
-
