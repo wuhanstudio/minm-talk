@@ -46,7 +46,11 @@
                     <p style="font-size: 22px;"><i class="fab fa-github"></i> &nbsp; <a href="https://github.com/wuhanstudio/adversarial-camera">Source Code</a></p>
 
                     <aside class="notes">
-                        Hi, I'm a 2nd-year Ph.D. Student. I would like to introduce man-in-the-middle attack against object detection system. Well, is it possible to attack an object detection system? Say for example, here' we have .... But why do I do this?
+                        Hello everyone, I will introduce the Man-in-the-Middle Attack against Object Detection. Now we can deploy object detection models in robotic applications because we have more computational resources. But is Deep Learning secure for Robots? What if deep learning models are vulnerable to adversarial attacks? <br/>
+
+                        <br />
+
+                        In our research, we introduce a new hardware attack against object detection system. We inject the perturbation in the middle between the USB camera and the detection system.
                     </aside>
                 </section>
 
@@ -60,11 +64,13 @@
 
                 <section data-background-video="images/demo.mp4" data-background-video data-background-video-muted data-menu-title="Demo Video">
                     <aside class="notes">
+                        Here's a quick demo. We have a USB camera and a detection system. We used a raspberry pi version 4 to inject the perturbation. The raspberry pi reads the image from the USB camera, injects the perturbation, and then simulates a virtual camera to the detection system. The detection system has no idea that the image is manipulated.
                     </aside>
                 </section>
 
                 <section data-background-video="images/attack.mp4" data-background-video data-background-video-muted>
                     <aside class="notes">
+                        After injecting the perturbation, the detection system detects a large number of objects everywhere. Unbelievable! Right?
                     </aside>
                 </section>
 
@@ -76,7 +82,7 @@
                         <p style="font-size:0.8em">Deep learning models are vulnerable to adversarial attacks.</p>
                         <img src="images/daedalus.png" style="width: 80%;" alt="">
                     </div>
-                    <p style="font-size:0.6em" class="fragment" data-fragment-index="1">To achieve <strong>real-time</strong> adversarial attacks, we need to solve two problems:</p>
+                    <p style="font-size:0.6em" class="" data-fragment-index="1">To achieve <strong>real-time</strong> adversarial attacks, we need to solve two problems:</p>
                     <ul>
                         <li class="fragment" data-fragment-index="2">
                             <span style="font-size:0.6em">How to generate the perturbation?</span><span class="fragment" data-fragment-index="4"  style="color:blue; font-size:0.6em"> (The PCB Attack)</span>
@@ -86,7 +92,9 @@
                         </li>
                     </ul>
                     <aside class="notes">
-                        Because Deep learning models are moving from data centres to edge devices.We have more and more deep learning models deployed on edge devices, such as automous driving car. We know that deep learning models require large amounts of computational resources and energy. Twenty years ago, they are only available in data centres. Data cenres are usually highly secure in a dedicated space within a building, but edge devices are not, they are exposed to the outside world directly. Now, we have more computational resources on edge devices. Is it secure to deploy deep learning models on edge devices? Unfortunately, it is not. Deep learning models are vulnerable to adversarial attacks. This is not a secret. It has been over 8 years since the first adversarial attack against deep learning models.
+                        Now, we see deep learning models are vulnerable to adversarial attacks, but to achieve real-time adversarial attacks, we need to solve two problems: how to generate the perturbation and how to apply the perturbation efficiently? <br />
+                        <br />
+                        We propose the PCB attack to generate the perturbation and the Man-in-the-Middle attack to apply the pertebation.
                     </aside>
                 </section>
 
@@ -118,11 +126,16 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                             With learning rate decay</p>
                     </div>
-                    <p style="font-size: 25px; margin-top: 0; margin-bottom: 0;" class="fragment"> Our method generates more bounding boxes, and have less variation.</p>
+                    <p style="font-size: 25px; margin-top: 0; margin-bottom: 0;" class=""> Our method generates more bounding boxes, and have less variation.</p>
                     <img src="images/results.png" class="fragment" width="80%">
+                    
+                    <aside class="notes">
+                        In the first step, we generate a single Universal Adversarial Perturbation to fool all the images from the camera. Our method generates more bounding boxes and has less variation. <br />
+                        <br />
+                        Prior research used the Mean Accuracy Precision to measure adversarial attacks, but it actually measures the accuracy of the model rather than the strength of the attack. Thus we propose three evaluation metrics to measure the strength of the attack, and we achieve a stronger attack after applying the learning rate decay.
+                    </aside>
                 </section>
 
                 <section data-menu-title="Step 2: Applying the Perturbation">
@@ -136,7 +149,9 @@
                     <img src="images/attacks.jpg" width="100%">
 
                     <aside class="notes">
-                        Because Deep learning models are moving from data centres to edge devices.We have more and more deep learning models deployed on edge devices, such as automous driving car. We know that deep learning models require large amounts of computational resources and energy. Twenty years ago, they are only available in data centres. Data cenres are usually highly secure in a dedicated space within a building, but edge devices are not, they are exposed to the outside world directly. Now, we have more computational resources on edge devices. Is it secure to deploy deep learning models on edge devices? Unfortunately, it is not. Deep learning models are vulnerable to adversarial attacks. This is not a secret. It has been over 8 years since the first adversarial attack against deep learning models.
+                        In the next step, to apply the perturbation, prior research introduced digital attack and physical attack. The digital attack requires access to the operating system, but hacking into the operating system is not trivial. The physical attack can print the perturbation on a poster, but the poster needs to be placed close to the camera. This is challenging for robotic applications in dynamic environments. <br />
+                        <br />
+                        We propose the hardware attack that injects the perturbation on the hardware level. The hardware attack does not assume access to the detection system and can inject perturbation to all input images captured by the camera.
                     </aside>
                 </section>
 
@@ -271,19 +286,18 @@
                     </aside>
                 </section> -->
 
-                <section data-menu-title="Summary">
-                    <p class="r-fit-text">Man-in-the-Middle Attack against Object Detection</p>
+                <section data-menu-title="Thanks">
+                    <!-- <h2>Thanks</h2> -->
+                    <!-- <p class="r-fit-text">Man-in-the-Middle Attack against Object Detection</p> -->
+                    <p class="name" style="color: blue;font-size: 45px;">Is Deep Learning secure for Robots?</p>
                     <img src="images/demo.jpg" />
-                    <p class="name fragment" style="color: blue;font-size: 26px;">Is Deep Learning secure for Robots?</p>
-                </section>
-
-                <section>
-                    <h2>Thanks</h2>
-                    <div class="r-vstack">
-                        <p><a href="https://minm.wuhanstudio.uk/">https://minm.wuhanstudio.uk</a></p>
-                    </div>
-                    <img src="images/qrcode.png" width="25%" />
+                    <p style="font-size: 30px;"><a href="https://minm.wuhanstudio.uk/">https://minm.wuhanstudio.uk</a></p>
                     <p style="font-size: 22px;"><i class="fab fa-github"></i> &nbsp; <a href="https://github.com/wuhanstudio/adversarial-camera">Source Code</a></p>
+                    <aside class="notes">
+                        This concludes how we generate and apply the perturbation. <br/>
+                        <br />
+                        You can find the source code and the slides on this website. Thank you.
+                    </aside>
                 </section>
 
             </div>
