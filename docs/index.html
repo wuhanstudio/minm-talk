@@ -62,18 +62,6 @@
                     </aside>
                 </section> -->
 
-                <section data-background-video="images/demo.mp4" data-background-video data-background-video-muted data-menu-title="Demo Video">
-                    <aside class="notes">
-                        Here's a quick demo. We have a USB camera and a detection system. We used a raspberry pi version 4 to inject the perturbation. The raspberry pi reads the image from the USB camera, injects the perturbation, and then simulates a virtual camera to the detection system. The detection system has no idea that the image is manipulated.
-                    </aside>
-                </section>
-
-                <section data-background-video="images/attack.mp4" data-background-video data-background-video-muted>
-                    <aside class="notes">
-                        After injecting the perturbation, the detection system detects a large number of objects everywhere. Unbelievable! Right?
-                    </aside>
-                </section>
-
                 <section data-menu-title="Real-time Adversarial Attacks">
                     <!-- <p class="" style="font-size: 35px;">Deep Learning: From Data Center to Edge Devices</p> -->
                     <!-- <img src="images/data_center_edger.png" style="width: 65%; margin-bottom: 0;" alt=""> -->
@@ -138,6 +126,30 @@
                     </aside>
                 </section>
 
+                <section>
+                    <h6 style="margin-top: 30px; margin-bottom: 10px;">The Universal Adversarial Perturbation (UAP)</h6>
+                    <div class="r-vstack">
+                        <div class="r-hstack">
+                            <video data-autoplay data-preload src="https://wuhanstudio.nyc3.cdn.digitaloceanspaces.com/talk/minm/ClearNoon-Town.mp4" width="25%"></video>
+                            <video data-autoplay data-preload src="https://wuhanstudio.nyc3.cdn.digitaloceanspaces.com/talk/minm/ClearNoon-Suburn.mp4" width="25%" style="margin-left: 10px;"></video>
+                        </div>
+                        <div class="r-hstack">
+                            <p style="font-size: 18px;">Clear Noon (City - Train)</p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <p style="font-size: 18px;">Clear Noon (Subrban - Test)</p>
+                        </div>
+                        <div class="r-hstack" style="margin-top: 0;">
+                            <video data-autoplay data-preload src="https://wuhanstudio.nyc3.cdn.digitaloceanspaces.com/talk/minm/Hardrain-Sunset-Town.mp4" width="25%"></video>
+                            <video data-autoplay data-preload src="https://wuhanstudio.nyc3.cdn.digitaloceanspaces.com/talk/minm/WetCloudyNight-Town.mp4" width="25%" style="margin-left: 10px;"></video>
+                        </div>
+                        <div class="r-hstack">
+                            <p style="font-size: 18px;">Hard Rain Sunset (City - Test)</p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <p style="font-size: 18px;">Wet Cloudy Night (City - Test)</p>
+                        </div>                    </div>
+                    <p style="font-size: 20px; margin-top: 0;">The UAP generalizes to different daytime, weathers and maps.</p>
+                </section>
+
                 <section data-menu-title="Step 2: Applying the Perturbation">
                     <!-- <p class="" style="font-size: 35px;">Deep Learning: From Data Center to Edge Devices</p> -->
                     <!-- <img src="images/data_center_edger.png" style="width: 65%; margin-bottom: 0;" alt=""> -->
@@ -152,6 +164,18 @@
                         In the next step, to apply the perturbation, prior research introduced digital attack and physical attack. The digital attack requires access to the operating system, but hacking into the operating system is not trivial. The physical attack can print the perturbation on a poster, but the poster needs to be placed close to the camera. This is challenging for robotic applications in dynamic environments. <br />
                         <br />
                         We propose the hardware attack that injects the perturbation on the hardware level. The hardware attack does not assume access to the detection system and can inject perturbation to all input images captured by the camera.
+                    </aside>
+                </section>
+
+                <section data-background-video="images/demo.mp4" data-background-video data-background-video-muted data-menu-title="Demo Video">
+                    <aside class="notes">
+                        Here's a quick demo. We have a USB camera and a detection system. We used a raspberry pi version 4 to inject the perturbation. The raspberry pi reads the image from the USB camera, injects the perturbation, and then simulates a virtual camera to the detection system. The detection system has no idea that the image is manipulated.
+                    </aside>
+                </section>
+
+                <section data-background-video="images/attack.mp4" data-background-video data-background-video-muted>
+                    <aside class="notes">
+                        After injecting the perturbation, the detection system detects a large number of objects everywhere. Unbelievable! Right?
                     </aside>
                 </section>
 
